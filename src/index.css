@@ -29,6 +29,7 @@
   --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.4);
   --brisa-app-bg: #020617;
   --brisa-dots: rgba(255, 255, 255, 0.05);
+  color-scheme: dark;
 }
 
 * {
@@ -81,7 +82,7 @@ input, select, textarea {
   padding: 8px 12px;
   border-radius: var(--radius-md);
   border: 1px solid var(--glass-border);
-  background: var(--brisa-bg);
+  background: var(--brisa-app-bg);
   color: inherit;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.875rem;
