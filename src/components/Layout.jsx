@@ -3,6 +3,12 @@ import React from 'react';
 const Layout = ({ children, darkMode, toggleDarkMode }) => {
   return (
     <>
+      <header className="mobile-header">
+        <h1 className="logo-font">BRiSa</h1>
+        <button className="theme-toggle-icon" onClick={toggleDarkMode}>
+          {darkMode ? '☀️' : '🌙'}
+        </button>
+      </header>
       <aside className="sidebar glass">
         <div className="logo-container">
           <h1 className="logo-font">BRiSa</h1>
@@ -161,6 +167,89 @@ const Layout = ({ children, darkMode, toggleDarkMode }) => {
           nav li {
             justify-content: center;
             padding: 14px;
+          }
+        }
+        
+        .mobile-header {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding: 16px 24px;
+          justify-content: space-between;
+          align-items: center;
+          z-index: 200;
+          border-bottom: 1px solid var(--glass-border);
+          background: var(--glass-bg);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+        }
+
+        .mobile-header h1 {
+          font-size: 2rem;
+          color: var(--brisa-navy);
+          margin: 0;
+          line-height: 1;
+        }
+
+        .theme-toggle-icon {
+          background: transparent;
+          border: none;
+          font-size: 1.5rem;
+          padding: 8px;
+          cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+          .mobile-header {
+            display: flex;
+          }
+          .sidebar {
+            top: auto;
+            bottom: 0;
+            width: 100%;
+            height: 70px;
+            flex-direction: row;
+            padding: 0;
+            border-right: none;
+            border-top: 1px solid var(--glass-border);
+            z-index: 200;
+          }
+          .logo-container, .sidebar-footer {
+            display: none !important;
+          }
+          nav {
+            width: 100%;
+          }
+          nav ul {
+            display: flex;
+            justify-content: space-around;
+            height: 100%;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+          }
+          nav li {
+            margin: 0;
+            flex-direction: column;
+            padding: 8px;
+            gap: 4px;
+            border-radius: 0;
+            flex: 1;
+            justify-content: center;
+          }
+          nav li span.icon {
+            font-size: 1.2rem;
+          }
+          nav li {
+            font-size: 0.70rem;
+          }
+          .main-content {
+            margin-left: 0;
+            margin-top: 70px;
+            margin-bottom: 70px;
+            padding: 24px 16px;
           }
         }
       `}</style>
