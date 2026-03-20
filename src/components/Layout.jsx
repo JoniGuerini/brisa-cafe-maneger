@@ -139,6 +139,7 @@ const Layout = ({ children, darkMode, toggleDarkMode }) => {
         .main-content {
           margin-left: 240px;
           flex: 1;
+          min-width: 0; /* Prevents overflow from wide child tables */
           padding: 40px 60px;
           min-height: 100vh;
           position: relative;
